@@ -49,8 +49,6 @@ cb3 =KySu ("Trang",19,"Nữ","Gia Lâm",5)
 cb4= NhanVien ("Trâm béo",19,"Nữ","Tây Hồ","văn phòng")
 cb1.hien_thi_cb()
 #yeucau2
-from CanBo import CongNhan, KySu, NhanVien
-
 class QLCB:
     def __init__(self):
         self.danhsach = []
