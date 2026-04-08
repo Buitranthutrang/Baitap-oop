@@ -4,3 +4,43 @@ class SieuNhan:
         self.ten = ten
         self.vu_khi = vu_khi
         self.mau_sac = mau_sac
+    def __str__(self):
+        return(f"Siêu nhân{self.ten}|"
+               f"Vũ Khí:{self.vu_khi}|"
+               f"Màu sắc:{self.mau_sac}")
+    
+#Khởi tạo đối tượng
+sieu_nhan_A = SieuNhan("A","gươm","đỏ")
+sieu_nhan_B = SieuNhan("B","gậy","hồng")
+print(sieu_nhan_A)
+print(sieu_nhan_B)
+
+#cau3
+class SieuNhan:
+    def __init__(self, ten="", vu_khi="", mau_sac="", suc_manh=0):
+        self.ten      = ten
+        self.vu_khi   = vu_khi
+        self.mau_sac  = mau_sac
+        self.suc_manh = suc_manh
+
+    def __str__(self):
+        return (f" {self.ten:10} | Vũ khí: {self.vu_khi:8} | "
+                f"Màu: {self.mau_sac:8} | Sức mạnh: {self.suc_manh}")
+
+danh_sach = []
+print("=== NHẬP DANH SÁCH SIÊU NHÂN ===")
+print("(Nhấn Enter để kết thúc)\n")
+
+while True:
+    ten = input("Tên siêu nhân: ")
+    if ten == "":
+        break
+    vu_khi  = input("Vũ khí: ")
+    mau_sac = input("Màu sắc: ")
+    suc_manh = int(input("Sức mạnh (1-100): "))
+    danh_sach.append(SieuNhan(ten, vu_khi, mau_sac, suc_manh))
+    print(f"  → Đã thêm {ten}!\n")
+
+print(f"\n=== DANH SÁCH {len(danh_sach)} SIÊU NHÂN ===")
+for i, sn in enumerate(danh_sach, 1):
+    print(f"{i}.", sn)
