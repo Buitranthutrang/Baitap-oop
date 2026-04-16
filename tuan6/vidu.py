@@ -42,18 +42,15 @@ class CongNhan(CanBo):
         return cls(d["ho_ten"], d["tuoi"], d["gioi_tinh"], d["dia_chi"], d["bac"])
 
 
-# === LƯU ===
 danh_sach = [
     CanBo("Nguyễn An", 30, "Nam", "Hà Nội"),
     CongNhan("Trần Bình", 25, "Nam", "TP.HCM", 5),
 ]
-
 data = [cb.to_dict() for cb in danh_sach]
-
+#save
 with open("canbo.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
-
-# === TẢI ===
+#dl
 with open("canbo.json", "r", encoding="utf-8") as f:
     raw = json.load(f)
 #Khôi phục đúng loại theo "loại"
